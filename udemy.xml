@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite>
+	<id>S1</id>
+	<name>Master</name>
+	<description></description>
+	<sections>
+		<section>
+		<name>Proficosmetics test cases</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Login suite</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C1</id>
+				<title>Регистрация с валидными данными</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Critical</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь должен иметь действительный телефон +37444220126</preconds>
+										<steps_separated><step>
+<index>1</index><content>Открыть сайт https://www.proficosmetics.ru</content><expected>Сайт загрузился, пользователь видит шапку сайта</expected></step>
+<step>
+<index>2</index><content>Нажать на иконку с подписью &quot;Войти&quot; в шапке сайта</content><expected>Открылось выпадающее меню для входа или регистрации</expected></step>
+<step>
+<index>3</index><content>Выбрать из выпадающего меню &quot;Войти&quot; в шапке сайта строку &quot;Регистрация&quot;</content><expected>Открылась страница регистрации</expected></step>
+<step>
+<index>4</index><content>Ввести телефон +37444220126
+Ввести данные каптчи</content><expected>Получить проверочный код на введенный телефон</expected></step>
+<step>
+<index>5</index><content>Ввести проверочный код и нажать кнопку &quot;Регистрация&quot;</content><expected>Открылась страница с личным кабинетом</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C2</id>
+				<title>Вход в личный кабинет с валидными данными</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>High</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Наличие у пользователя учетной записи на сайте  https://www.proficosmetics.ru/</preconds>
+										<steps_separated><step>
+<index>1</index><content>Открыть сайт https://www.proficosmetics.ru/</content><expected>Сайт открылся, пользователь видит шапку сайта</expected></step>
+<step>
+<index>2</index><content>В шапке сайта выбрать и кликнуть кнопку &quot;Войти&quot;</content><expected>Открылось выпадающее меню &quot;Войти&quot;</expected></step>
+<step>
+<index>3</index><content>В выпадающем меню выбрать пункт &quot;Войти в личный кабинет&quot;</content><expected>Открылась страница для входа в личный кабинет пользователя</expected></step>
+<step>
+<index>4</index><content>Ввести логин и пароль учетной записи пользователя</content><expected>Открылся личный кабинет пользователя</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C3</id>
+				<title>Регистрация по адресу электронной почты</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь должен иметь действительный e-mail milladom@gmail.com
+</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>1</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести телефон +79999991199
+Ввести информацию с каптчи
+Нажать кнопку &quot;Продолжить&quot;</content><expected>Проверочный код в смс не пришел, появилась ссылка для регистрации по почте</expected></step>
+<step>
+<index>3</index><content>Нажать ссылку &quot;Зарегистрироваться по почте&quot;</content><expected>Открылось окно регистрации (создание личного кабинета)</expected></step>
+<step>
+<index>4</index><content>Ввести имя Maria
+Ввести почту milladom@gmail.com
+Ввести пароль 456
+Повторить введенный пароль 456
+Ввести информацию с каптчи
+Отметить чек-бокс с согласием на обработку личной информации
+Нажать кнопку &quot;Зарегистрироваться&quot;</content><expected>Открылась страница с личным кабинетом пользователя</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C4</id>
+				<title>Регистрация с неверным логином пользователя и правильным паролем</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Наличие у пользователя учетной записи на сайте https://www.proficosmetics.ru/</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>2</shared_step_id></step>
+<step>
+<index>2</index><content>ввести электронную почту milla_domaa@gmail.com
+Ввести пароль 456
+нажать кнопку &quot;Войти&quot;</content><expected>Вход не произошел, логин выделен красным, появилась надпись &quot;Пользователь не найден&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C5</id>
+				<title>Регистрация с верным логином пользователя и неверным паролем</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Наличие у пользователя учетной записи на сайте https://www.proficosmetics.ru/</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>2</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести электронную почту milladom@gmail.com
+Ввести пароль 123
+Нажать кнопку &quot;Войти&quot;</content><expected>Вход в личный кабинет не произошел
+Пароль выделен красным
+Появилась надпись &quot;Неверный логин или пароль&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Shopping Cart suite</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C6</id>
+				<title>Добавление одного товара в корзину</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь имеет учетную запись на сайте https://www.proficosmetics.ru/
+Пользователь вошел в свою учетную запись</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>3</shared_step_id></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C7</id>
+				<title>Добавление 2 товаров в корзину</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь имеет учетную запись на сайте https://www.proficosmetics.ru/
+
+Пользователь вошел в свою учетную запись</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>3</shared_step_id></step>
+<step>
+<index>2</index><content>Нажать на знак &quot;+&quot; в графе Кол-во один раз</content><expected>Количество товара увеличилось на 1 ед., цена увеличилась на стоимость одного товара</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C8</id>
+				<title>Добавление 100 товаров в корзину</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь имеет учетную запись на сайте https://www.proficosmetics.ru/
+
+Пользователь вошел в свою учетную запись</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>3</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести в графе &quot;Кол-во&quot; цифру 100 вручную</content><expected>Количество товара в корзине увеличилось до 100 ед., цена увеличилась в 100 раз.</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C9</id>
+				<title>Добавление -10 товаров в корзину</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь имеет учетную запись на сайте https://www.proficosmetics.ru/
+
+Пользователь вошел в свою учетную запись</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>3</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести в графе &quot;Кол-во&quot; значение -10</content><expected>Количество товара не изменилось, осталась 1 ед. товара, цена не изменилась</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C10</id>
+				<title>Добавление 0.3 товаров в корзину</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Пользователь имеет учетную запись на сайте https://www.proficosmetics.ru/
+
+Пользователь вошел в свою учетную запись</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>3</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести вручную в графе &quot;Кол-во&quot; значение -0,3</content><expected>Количество товара в корзине не изменилось, осталась 1 ед. товара, цена не изменилась</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Test desighn technics</name>
+		<description>Udemy exercise 11</description>
+						<cases>
+												<case>
+				<id>C11</id>
+				<title>Регистрация с невалидными данными</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Boundary Values
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Открыть сайт https://www.proficosmetics.ru</content><expected>Сайт открыт, пользователь видит главную страницу сайта</expected></step>
+<step>
+<index>2</index><content>Нажать на иконку &quot;Войти&quot; в шапке сайта</content><expected>Открылось выпадающее меню для входа или регистрации</expected></step>
+<step>
+<index>3</index><content>Выбрать из выпадающего меню &quot;Войти&quot; строку &quot;Регистрация&quot;</content><expected>Открылась страница с регистрацией </expected></step>
+<step>
+<index>4</index><content>Ввести телефон +7(999)123456
+Ввести данные каптчи
+Нажать кнопку &quot;Продолжить&quot;</content><expected>Введенный номер телефона подсвечен красным, получено сообщение &quot;Ошибка в формате телефона&quot;, регистрация не возможна</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C12</id>
+				<title>Регистрация с невалидными данными по email</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>High</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Equivalence partitioning</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>1</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести телефон +79999991199
+Ввести информацию с каптчи
+Нажать кнопку &quot;Продолжить&quot;</content><expected>Проверочный код в смс не пришел, появилась ссылка для регистрации по почте
+
+</expected></step>
+<step>
+<index>3</index><content>Нажать ссылку &quot;Зарегистрироваться по почте&quot;
+
+</content><expected>Открылось окно регистрации (создание личного кабинета)
+
+</expected></step>
+<step>
+<index>4</index><content>Ввести имя 111
+Ввести почту milladom.gmail.com
+Ввести пароль 45
+Повторить введенный пароль 45
+Ввести информацию с каптчи
+Отметить чек-бокс с согласием на обработку личной информации
+Нажать кнопку &quot;Зарегистрироваться&quot;</content><expected>Поле &quot;Представьтесь...&quot; подсвечено красным, под ним сообщение &quot;Поле &quot;Имя&quot; может содержаться только буквы и -&quot;
+Поле &quot;Почта&quot; подсвечено красным, под ним сообщение &quot;Ошибка email&quot;
+Поле &quot;Пароль&quot; подсвечено красным, под ним сообщение &quot;Пароль должен быть минимум 3 символа&quot;
+Регистрация не прошла</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C14</id>
+				<title>Регистрация с частично невалидными данными по email</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>High</priority>
+																				<estimate>300</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Decision Table</preconds>
+										<steps_separated><step>
+<index>1</index><shared_step_id>1</shared_step_id></step>
+<step>
+<index>2</index><content>Ввести телефон +79999991199
+Ввести информацию с каптчи
+Нажать кнопку &quot;Продолжить&quot;
+
+</content><expected>Проверочный код в смс не пришел, появилась ссылка для регистрации по почте
+
+</expected></step>
+<step>
+<index>3</index><content>Нажать ссылку &quot;Зарегистрироваться по почте&quot;
+
+</content><expected>Открылось окно регистрации (создание личного кабинета)
+
+</expected></step>
+<step>
+<index>4</index><content>Ввести имя 111
+Ввести почту milladom@gmail.com
+Ввести пароль 456
+Повторить введенный пароль 456
+Ввести информацию с каптчи
+Отметить чек-бокс с согласием на обработку личной информации
+Нажать кнопку &quot;Зарегистрироваться&quot;
+
+</content><expected>Поле &quot;Представьтесь...&quot; подсвечено красным, под ним сообщение &quot;Поле &quot;Имя&quot; может содержаться только буквы и -&quot;
+Регистрация не прошла</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C15</id>
+				<title>Проверка работы фильтров каталога</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate>180</estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Parwise testing</preconds>
+										<steps_separated><step>
+<index>1</index><content>Открыть сайт https://www.proficosmetics.ru/</content><expected>Сайт открыт, пользователь видит главную страницу сайта</expected></step>
+<step>
+<index>2</index><content>В меню каталога в шапке сайта выбрать раздел &quot;Волосы&quot;</content><expected>Открылось выпадающее меню с выбором группы товаров &quot;Волосы&quot;</expected></step>
+<step>
+<index>3</index><content>В выпадающем меню &quot;Волосы&quot; выбрать группу товаров &quot;Бальзамы&quot;</content><expected>Открылась страница с товарами группы товаров &quot;Бальзамы&quot;</expected></step>
+<step>
+<index>4</index><content>В фильтрах в левой части страницы в разделе &quot;Применение&quot; нажать чекбокс &quot;Восстановление&quot;, а в разделе &quot;Тип волос&quot; нажать чекбокс &quot;Возрастные&quot;</content><expected>Товары категории &quot;Бальзамы&quot; отсортированы в соответствии с выбранными фильтрами, результат сортировки есть, товары соответствуют выбранным фильтрам</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+															<case>
+				<id>C16</id>
+				<title>Увеличение UI сайта</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Low</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Error guessing</preconds>
+										<steps_separated><step>
+<index>1</index><content>Открыть сайт https://www.proficosmetics.ru/</content><expected>Сайт открыт, пользователь видит главную страницу сайта</expected></step>
+<step>
+<index>2</index><content>Увеличить UI сайта до 250%</content><expected>UI увеличен, сайт читаем, все функции выбора, сортировки и навигации сохранены</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+	</sections>
+</suite>
